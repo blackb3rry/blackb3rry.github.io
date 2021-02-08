@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+    <head>  <link rel="stylesheet" href="html5up-photon/assets/css/main.css" />
+        <noscript>
+            <link rel="stylesheet" href="html5up-photon/assets/css/noscript.css" />
+        </noscript>
+        <style>
+            div.sticky {
+              position: -webkit-sticky;
+              position: sticky;
+              bottom: 4px;
+              padding: 5px;
+              background-color: #fefeff;
+              border: 2px solid #dee1f0;
+            }
+            table {
+                border-collapse: collapse;
+                width: 80%
+                }
+
+                td {
+                border: 1px solid black;
+                padding: 3px 5px;
+                }
+        </style>
+    </head>
+<body>
+    
+  <p>Before the script...</p>
+
+  
+
+
+
+  <script>
+  "use strict";
+    let currentUser = 0;
+    let userArray = [];
+    new User(0);
+
+    //Create a character object, createCharacter function
+    function User( index ) {
+        if ( index != 0 ) currentUser += index;
+        userArray[currentUser] = this;
+        userArray[currentUser].name = "Link";
+        //userArray[currentUser].name = prompt("Welcome to Kiojaklettr. Please enter your character's name now.","Link");
+        userArray[currentUser].charClass = "Ranger";
+        userArray[currentUser].money = Math.floor(Math.random() * 100 );
+    };
+
+    function addCode() { 
+            document.getElementById("main_body").insertAdjacentHTML("afterend", 
+                "<p>" + userArray[currentUser].name + " looks around the store and likes what he sees. Btw, you are #"+currentUser+"</p>"); 
+        };
+
+    function rollD6() {
+        let result = Math.ceil(Math.random() * 6);
+        document.getElementById("main_body").insertAdjacentHTML("afterend", 
+                "<p>" + userArray[currentUser].name + " takes an action. Rolls a " + result + ".</p>"); 
+    }
+
+    function testRollD6() {
+        let result = [0,0,0,0,0,0,0];
+        for (let i=0; i<1000; i++)
+        {
+            let roll = Math.ceil(Math.random() * 6);
+            if ( roll > 6 || roll < 1 ) alert(`Help, I somehow got a ${roll}`);
+            result[roll]++;
+        }
+
+        let resultPercentages = [];
+        result.forEach(function( item,index,result) {
+            resultPercentages[index] = ( Math.round(( item / 1000 ) * 100)) + "%";
+        });
+            
+        document.getElementById("main_body").insertAdjacentHTML("afterend", 
+                "<p>Let's do some testing. We rolled 1000 times and got " + result + "<br> and also saw " + resultPercentages + "</p>"
+                ); 
+    }
+
+    function newAction() {
+        let actionOutput = document.getElementById("input_bar").value;
+        document.getElementById("main_body").insertAdjacentHTML("afterend", 
+            "<p>" + userArray[currentUser].name + " " + actionOutput + ".</p>"); 
+        let _input_bar = document.getElementById("input_bar");
+        _input_bar.value = "";
+            
+    }
+
+
+    function showUserArray() {
+        //userArray.forEach(alert( `Your characters: ${name}`));
+        let charNames = userArray.map(character => ({
+      name: `${character.name}`
+    }))
+        alert(charNames['name']);
+    };  
+
+    
+    //Starting text
+    document.body.innerHTML = "<p>Welcome " + userArray[currentUser].name +". Your character class is " + userArray[currentUser].charClass + ", and you have " + userArray[currentUser].money + " gold pieces.</p><p>You have "+userArray.length+" characters."
+    
+
+    let table = document.createElement('table');
+    for (var i = 1; i < 4; i++){
+     let tr = document.createElement('tr');   //rows
+
+     let td1 = document.createElement('td'); //columns
+     let td2 = document.createElement('td');
+
+     let text1 = document.createTextNode('Text1'); //text data
+     let text2 = document.createTextNode('Text2');
+
+    td1.appendChild(text1);
+    td2.appendChild(text2);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+
+    table.appendChild(tr);
+}
+document.body.appendChild(table);
+
+        /*        let table = document.body.firstElementChild;
+
+    for (let i = 1; i < table.rows.length; i++) {
+    let row = table.rows[i];
+    row.cells[i] = 'Monster here'; 
+}*/
+
+
+  </script>
+
+  <p id="main_body">...After the script...</p> 
+
+
+
+
+
+  <input id="bCharCreate" type="button" value="Create New Character" onclick="new User(1)" />
+  <input id="bAddText" type="button" value="Add more text" onclick="addCode()" />
+  <p>
+    <input id="bRollD6" type="button" value="D6" onclick="rollD6()" />
+    <input id="bRollD6" type="button" value="test D6" onclick="testRollD6()" />
+    <input id="bUserArray" type="button" value="user array" onclick="showUserArray()" />
+    
+    <div class="sticky">
+        <!--
+            <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" /> 
+        -->
+        <!-- 
+            <form>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+        </form>
+        -->
+        
+        <input type="text" name="input_bar" id="input_bar" placeholder="What do you want to do?"/>
+        <input type="submit" value="Enter" onclick="newAction()" />
+    </div>  
+  </p>
+
+</body>
+
+</html>
