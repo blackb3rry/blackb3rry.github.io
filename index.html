@@ -104,55 +104,13 @@
     
     document.body.innerHTML = "<p>Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice." 
 
-    let table = document.createElement('table');
-    for (var i = 1; i < 4; i++){
-     let tr = document.createElement('tr');   //rows
-
-     let td1 = document.createElement('td'); //columns
-     let td2 = document.createElement('td');
-
-     let text1 = document.createTextNode('Text1'); //text data
-     let text2 = document.createTextNode('Text2');
-
-    td1.appendChild(text1);
-    td2.appendChild(text2);
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-
-    table.appendChild(tr);
-}
-document.body.appendChild(table);
-
-        /*        let table = document.body.firstElementChild;
-
-    for (let i = 1; i < table.rows.length; i++) {
-    let row = table.rows[i];
-    row.cells[i] = 'Monster here'; 
-}*/
-
-
   </script>
   
   <p id="main_body">...After the script...</p> 
   <p>
     <input id="bRollD6" type="button" value="Roll d6" onclick="rollD6()" />
     <input id="bRollDX" type="button" value="Roll dX" onclick="rolldX()" />
-    
-    <div class="sticky">
-        <!--
-            <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" /> 
-        -->
-        <!-- 
-            <form>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name">
-        </form>
-        
-        
-        <input type="text" name="input_bar" id="input_bar" placeholder="What do you want to do?"/>
-        <input type="submit" value="Enter" onclick="newAction()" />
-        -->
-    </div>  
+
   </p>
 
 </body>
