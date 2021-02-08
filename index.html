@@ -44,10 +44,6 @@
         userArray[currentUser].money = Math.floor(Math.random() * 100 );
     };
 
-    function addCode() { 
-            document.getElementById("main_body").insertAdjacentHTML("afterend", 
-                "<p>" + userArray[currentUser].name + " looks around the store and likes what he sees. Btw, you are #"+currentUser+"</p>"); 
-        };
 
     function rolldX() { 
             let sides = prompt("How many sides on this dice?",6);
@@ -59,7 +55,7 @@
     function rollD6() {
         let result = Math.ceil(Math.random() * 6);
         document.getElementById("main_body").insertAdjacentHTML("afterend", 
-                "<p>" + userArray[currentUser].name + " takes an action. Rolls a " + result + ".</p>"); 
+                "<p>You roll a " + result + ".</p>"); 
     }
 
     function testRollD6() {
@@ -101,7 +97,6 @@
 
     
     //Starting text
-    
     document.body.innerHTML = "<p>Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice." 
 
   </script>
