@@ -112,9 +112,10 @@
         let table=document.getElementById("addTable");
         let rowCount=table.rows.length;
         let result = Math.ceil(Math.random() * rowCount);
-        let resultRow = document.getElementById("addTable").rows[result];
-        let resultValue = resultRow[0].innerHTML;
-        //document.getElementById("addTable").rows[result].innerHTML;
+        //let resultRow = document.getElementById("addTable").rows[result];
+        let resultValue = document.getElementById("addTable").rows.item(result).innerHTML;
+        //let resultValue = resultRow[0].innerHTML;
+        
         document.getElementById("main_body").insertAdjacentHTML("afterend", 
             "<p>You have randomly selected " + resultValue + ".</p>"); 
     }
