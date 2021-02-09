@@ -96,19 +96,26 @@
     };  
 
     function addRow() {
-var table=document.getElementById("addTable");
-var rowCount=table.rows.length;
-var addRow = table.insertRow(rowCount);
-var cell1=addRow.insertCell(0);
-cell1.innerHTML=rowCount + 1;
-var cell2 = addRow.insertCell(1);
-var element=document.createElement("input");
-element.type="text";
-element.name="taxtbox";
-cell2.appendChild(element);
-}
+    let table=document.getElementById("addTable");
+    let rowCount=table.rows.length;
+    let addRow = table.insertRow(rowCount);
+    let cell1=addRow.insertCell(0);
+    cell1.innerHTML=rowCount + 1;
+    let cell2 = addRow.insertCell(1);
+    let element=document.createElement("input");
+    element.type="text";
+    element.name="taxtbox";
+    cell2.appendChild(element);
+    }
 
-    
+    function chooseRandRow() {
+        let table=document.getElementById("addTable");
+        let rowCount=table.rows.length;
+        let result = Math.ceil(Math.random() * rowCount);
+        let resultValue = document.getElementById("myTable").rows[result].innerHTML;
+        document.getElementById("main_body").insertAdjacentHTML("afterend", 
+            "<p>You have randomly selected " + resultValue + ".</p>"); 
+    }
 
 
 
