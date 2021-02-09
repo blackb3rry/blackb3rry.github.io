@@ -112,7 +112,7 @@
         let table=document.getElementById("addTable");
         let rowCount=table.rows.length;
         let result = Math.ceil(Math.random() * rowCount);
-        let resultValue = document.getElementById("myTable").rows[result].innerHTML;
+        let resultValue = document.getElementById("addTable").rows[result].innerHTML;
         document.getElementById("main_body").insertAdjacentHTML("afterend", 
             "<p>You have randomly selected " + resultValue + ".</p>"); 
     }
@@ -134,6 +134,7 @@
 
   <p>or....add your choices below </p>
   <input type="button" value="+" onclick="addRow()"></input>
+
   <table id="addTable" width="200px" border="1">
   <tr>
   <td>1</td>
