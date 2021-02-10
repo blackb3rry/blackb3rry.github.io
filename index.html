@@ -20,7 +20,7 @@
 
                 td {
                 border: 1px solid black;
-                padding: 3px 5px;
+                padding: 2px 3px;
                 }
         </style>
     </head>
@@ -43,7 +43,6 @@
         userArray[currentUser].charClass = "Ranger";
         userArray[currentUser].money = Math.floor(Math.random() * 100 );
     };
-
 
     function rolldX() { 
             let sides = prompt("How many sides on this dice?",6);
@@ -119,21 +118,19 @@
             "<p>You have randomly selected " + result + ". " + resultValue + ".</p>"); 
 
 
-                var rowsNotSelected = table.getElementsByTagName('tr');
-                for (var row = 0; row < rowsNotSelected.length; row++) {
-                    rowsNotSelected[row].style.backgroundColor = "";
-                    rowsNotSelected[row].classList.remove('selected');
-                }
-                var rowSelected = table.getElementsByTagName('tr')[result-1];
-                rowSelected.style.backgroundColor = "lightyellow";
-                rowSelected.className += " selected";
-            }
-
-    //window.onload = highlight_row;
+        var rowsNotSelected = table.getElementsByTagName('tr');
+        for (var row = 0; row < rowsNotSelected.length; row++) {
+            rowsNotSelected[row].style.backgroundColor = "";
+            rowsNotSelected[row].classList.remove('selected');
+        }
+        var rowSelected = table.getElementsByTagName('tr')[result-1];
+        rowSelected.style.backgroundColor = "lightyellow";
+        rowSelected.className += " selected";
+    }
 
     //Starting text
-    //document.body.innerHTML = "<p>Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice." 
-        document.getElementById("main_body").insertAdjacentHTML("afterend","Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice."); 
+    document.body.innerHTML = "<p>Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice." 
+        //document.getElementById("main_body").insertAdjacentHTML("afterend","Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice."); 
   </script>
   
   <p id="main_body"></p> 
