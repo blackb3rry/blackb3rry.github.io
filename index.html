@@ -129,11 +129,12 @@
                 rowSelected.className += " selected";
             }
 
-    window.onload = highlight_row;
+    //window.onload = highlight_row;
 
     //Starting text
-    document.body.innerHTML = "<p>Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice." 
-
+    //document.body.innerHTML = "<p>Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice." 
+        document.getElementById("main_body").insertAdjacentHTML("afterend", 
+                "Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice."); 
   </script>
   
   <p id="main_body"></p> 
