@@ -119,18 +119,14 @@
             "<p>You have randomly selected " + result + ". " + resultValue + ".</p>"); 
 
 
-
-                var rowId = this.parentNode.result-1;
-
                 var rowsNotSelected = table.getElementsByTagName('tr');
                 for (var row = 0; row < rowsNotSelected.length; row++) {
                     rowsNotSelected[row].style.backgroundColor = "";
                     rowsNotSelected[row].classList.remove('selected');
                 }
-                var rowSelected = table.getElementsByTagName('tr')[rowId];
+                var rowSelected = table.getElementsByTagName('tr')[result-1];
                 rowSelected.style.backgroundColor = "yellow";
                 rowSelected.className += " selected";
-
             }
 
 window.onload = highlight_row;
