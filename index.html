@@ -125,14 +125,11 @@
                     rowsNotSelected[row].classList.remove('selected');
                 }
                 var rowSelected = table.getElementsByTagName('tr')[result-1];
-                rowSelected.style.backgroundColor = "yellow";
+                rowSelected.style.backgroundColor = "lightyellow";
                 rowSelected.className += " selected";
             }
 
-window.onload = highlight_row;
-
-    
-
+    window.onload = highlight_row;
 
     //Starting text
     document.body.innerHTML = "<p>Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice." 
