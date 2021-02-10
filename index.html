@@ -114,7 +114,8 @@
         
         let rowCount=table.rows.length;
         let result = Math.ceil(Math.random() * rowCount);
-        alert(table.rows[1].cells[1].firstChild.value);
+        let resultValue = table.rows[result-1].cells[1].firstChild.value
+        //alert(table.rows[1].cells[1].firstChild.value);
         //let rowSelected = table.getElementsByTagName('tr')[result];
         //let resultValue = rowSelected.cells[1].innerHTML;
         //let resultRow = document.getElementById("addTable").rows[result];
@@ -124,7 +125,7 @@
         //let resultValue = resultRow[0].innerHTML;
         
         document.getElementById("main_body").insertAdjacentHTML("afterend", 
-            "<p>You have randomly selected no. " + result + ".</p>"); 
+            "<p>You have randomly selected " + result + ". " + resultValue + ".</p>"); 
     }
 
 
