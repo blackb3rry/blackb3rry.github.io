@@ -25,7 +25,6 @@
                 }
         </style>
     </head>
-    <input type="text">
 <body>
 
 
@@ -132,13 +131,13 @@
     }
 
     //Starting text
-    document.body.innerHTML = "<p>Welcome to this y'all! Please use the buttons below to roll a 6-sided or custom-sided dice." 
+    document.body.innerHTML = "<p>Welcome to this hellhole y'all! Please use the buttons below to roll a 6-sided or custom-sided dice." 
         //document.getElementById("main_body").insertAdjacentHTML("afterend","Welcome! Please use the buttons below to roll a 6-sided or custom-sided dice."); 
   
-        const input = document.createElement("input");
-          input.setAttribute("type", "text");
-          document.body.appendChild(input);
-  
+    const input = document.createElement("input");
+        input.setAttribute("type", "text");
+        document.body.appendChild(input);
+
   </script>
   
   <p id="main_body"></p> 
@@ -159,6 +158,9 @@
   </table>
 
   <input id="chooseRandRow" type="button" value="Random Select!" onclick="chooseRandRow()" /> 
+
+  <h1>Create Textbox element using JavaScript</h1>
+  <input type="text">
 
 </body>
 
